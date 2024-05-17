@@ -3,7 +3,11 @@ import{createBrowserRouter,createRoutesFromElements,Route, RouterProvider} from 
 import Home from './pages/Home';
 import About from './pages/About';
 
-import RootLayout from './Layout.js/RootLayout';
+import RootLayout from './Layout/RootLayout';
+import HelpLayout from './Layout/HelpLayout';
+
+import Contact from './pages/help/contact';
+import Faq from './pages/help/faq';
 
 
 const router=createBrowserRouter(
@@ -11,6 +15,10 @@ const router=createBrowserRouter(
     <Route path="/" element={<RootLayout/>}>
         <Route path='/' element={<Home/>}/>
         <Route path='about' element={<About/>}/>
+        <Route path='help' element={<HelpLayout/>}>
+          <Route path='faq'element={<Faq/>}/>
+          <Route path='contact'element={<Contact/>}/>
+        </Route>
       </Route>
 
   )
